@@ -10,7 +10,20 @@ import Foundation
 
 struct ChannelModel {
 
+    var id : String
     var name: String
     var owner: String
+
+    init(id: String, name: String, owner: String) {
+        self.name = name
+        self.owner = owner
+        self.id = id
+    }
+
+    init(name: String, owner: String) {
+        self.name = name
+        self.owner = owner
+        self.id = UUID().uuidString
+    }
 
 }

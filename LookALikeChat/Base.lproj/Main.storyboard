@@ -73,28 +73,22 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lh0-Wj-MKS">
-                                                    <rect key="frame" x="35" y="20.5" width="265" height="20.5"/>
+                                                    <rect key="frame" x="35" y="19" width="345" height="24"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Okj-ou-y11">
-                                                    <rect key="frame" x="320" y="11" width="40" height="40"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="40" id="NMG-MK-GlD"/>
-                                                        <constraint firstAttribute="height" constant="40" id="PlB-UF-Yt4"/>
-                                                    </constraints>
-                                                    <state key="normal" title="X"/>
-                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Lh0-Wj-MKS" firstAttribute="leading" secondItem="Bm2-C4-Uya" secondAttribute="leadingMargin" constant="20" id="ANJ-vd-SkD"/>
-                                                <constraint firstItem="Okj-ou-y11" firstAttribute="leading" secondItem="Lh0-Wj-MKS" secondAttribute="trailing" constant="20" id="GUg-y0-NP8"/>
-                                                <constraint firstItem="Okj-ou-y11" firstAttribute="centerY" secondItem="Bm2-C4-Uya" secondAttribute="centerY" id="Iua-sq-a2o"/>
-                                                <constraint firstItem="Lh0-Wj-MKS" firstAttribute="centerY" secondItem="Bm2-C4-Uya" secondAttribute="centerY" id="bKz-rZ-0H8"/>
-                                                <constraint firstAttribute="trailing" secondItem="Okj-ou-y11" secondAttribute="trailing" constant="15" id="meu-za-4Uv"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Lh0-Wj-MKS" secondAttribute="bottom" constant="8" id="ehM-vn-OFA"/>
+                                                <constraint firstItem="Lh0-Wj-MKS" firstAttribute="top" secondItem="Bm2-C4-Uya" secondAttribute="topMargin" constant="8" id="fvf-IQ-Js3"/>
+                                                <constraint firstItem="Lh0-Wj-MKS" firstAttribute="trailing" secondItem="Bm2-C4-Uya" secondAttribute="trailingMargin" constant="20" id="nLY-Au-fIQ"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="channelNameLabel" destination="Lh0-Wj-MKS" id="3HW-c5-ZDF"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="New channel cell" rowHeight="71" id="rhK-u9-KEQ" customClass="ChannelListViewControllerCreateChannelCell" customModule="LookALikeChat" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="90" width="375" height="71"/>
