@@ -38,16 +38,14 @@ class ViewController: UIViewController {
     }
 
     func auth(as name: String) {
-        //try? Firebase.Auth.auth().signOut()
-        Firebase.Auth.auth().signInAnonymously { (user, error) in
-            guard error == nil else {
-                print("Error auth user: \(error!.localizedDescription)")
-                return
-            }
-
-            let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-            if let viewController = storyboard.instantiateViewController(withIdentifier: "ChannelListViewController") as? ChannelListViewController {
-                self.navigationController?.pushViewController(viewController, animated: true)
+        UserModel.shared.nick = name
+        UserModel.shared.auth { [weak self] success in
+            guard let s = self else { return }
+            if success {
+                let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+                if let viewController = storyboard.instantiateViewController(withIdentifier: "ChannelListViewController") as? ChannelListViewController {
+                    s.navigationController?.pushViewController(viewController, animated: true)
+                }
             }
         }
     }

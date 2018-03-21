@@ -9,7 +9,7 @@
 import Foundation
 import Firebase
 
-struct ChannelModel {
+struct ChannelModel: Model {
 
     var id : String
     var name: String
@@ -34,10 +34,6 @@ struct ChannelModel {
 
     var snapshot: [String : Any] {
         return ["name": name, "owner": owner]
-    }
-
-    static func ==(left: ChannelModel, right: ChannelModel) -> Bool {
-        return left.id == right.id
     }
 
 }
