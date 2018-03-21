@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		297CBB4B8E26DF2B67E17049 /* Pods_LookALikeChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F593B462D97CDF23D42B7D7 /* Pods_LookALikeChat.framework */; };
+		7862B3C520629A590082F34E /* ChannelListViewControllerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7862B3C420629A590082F34E /* ChannelListViewControllerCell.swift */; };
+		7862B3C82062C15F0082F34E /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7862B3C72062C15F0082F34E /* UIViewExtension.swift */; };
 		78F19763204030EC00C694ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F19762204030EC00C694ED /* AppDelegate.swift */; };
 		78F19765204030EC00C694ED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F19764204030EC00C694ED /* ViewController.swift */; };
 		78F19768204030EC00C694ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78F19766204030EC00C694ED /* Main.storyboard */; };
@@ -20,6 +22,9 @@
 
 /* Begin PBXFileReference section */
 		4F593B462D97CDF23D42B7D7 /* Pods_LookALikeChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LookALikeChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7862B3C420629A590082F34E /* ChannelListViewControllerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelListViewControllerCell.swift; sourceTree = "<group>"; };
+		7862B3C62062B3D10082F34E /* TODO.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = TODO.md; sourceTree = "<group>"; };
+		7862B3C72062C15F0082F34E /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		78F1975F204030EC00C694ED /* LookALikeChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LookALikeChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78F19762204030EC00C694ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78F19764204030EC00C694ED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -46,6 +51,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7896D3082062CF2300881971 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7862B3C62062B3D10082F34E /* TODO.md */,
+				78F197742040320E00C694ED /* GoogleService-Info.plist */,
+				78F1976E204030EC00C694ED /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7896D3092062CFAD00881971 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				78F19766204030EC00C694ED /* Main.storyboard */,
+				78F19769204030EC00C694ED /* Assets.xcassets */,
+				78F1976B204030EC00C694ED /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		7896D30A2062D1A400881971 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				78F19764204030EC00C694ED /* ViewController.swift */,
+				78F1977620403D4500C694ED /* ChannelListViewController.swift */,
+				7862B3C420629A590082F34E /* ChannelListViewControllerCell.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		7896D30B2062D1BD00881971 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				78F19778204042D400C694ED /* ChannelModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7896D30D2062D28C00881971 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7862B3C72062C15F0082F34E /* UIViewExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		78F19756204030EC00C694ED = {
 			isa = PBXGroup;
 			children = (
@@ -68,14 +119,11 @@
 			isa = PBXGroup;
 			children = (
 				78F19762204030EC00C694ED /* AppDelegate.swift */,
-				78F19764204030EC00C694ED /* ViewController.swift */,
-				78F1977620403D4500C694ED /* ChannelListViewController.swift */,
-				78F19778204042D400C694ED /* ChannelModel.swift */,
-				78F19766204030EC00C694ED /* Main.storyboard */,
-				78F19769204030EC00C694ED /* Assets.xcassets */,
-				78F1976B204030EC00C694ED /* LaunchScreen.storyboard */,
-				78F197742040320E00C694ED /* GoogleService-Info.plist */,
-				78F1976E204030EC00C694ED /* Info.plist */,
+				7896D30B2062D1BD00881971 /* Models */,
+				7896D30A2062D1A400881971 /* View Controllers */,
+				7896D30D2062D28C00881971 /* Extensions */,
+				7896D3092062CFAD00881971 /* Resources */,
+				7896D3082062CF2300881971 /* Supporting Files */,
 			);
 			path = LookALikeChat;
 			sourceTree = "<group>";
@@ -234,6 +282,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				78F19765204030EC00C694ED /* ViewController.swift in Sources */,
+				7862B3C520629A590082F34E /* ChannelListViewControllerCell.swift in Sources */,
+				7862B3C82062C15F0082F34E /* UIViewExtension.swift in Sources */,
 				78F19779204042D400C694ED /* ChannelModel.swift in Sources */,
 				78F19763204030EC00C694ED /* AppDelegate.swift in Sources */,
 				78F1977720403D4500C694ED /* ChannelListViewController.swift in Sources */,
@@ -375,7 +425,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = LookALikeChat/Info.plist;
+				INFOPLIST_FILE = "LookALikeChat/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pro.compexnumbers.LookALikeChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -390,7 +440,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = LookALikeChat/Info.plist;
+				INFOPLIST_FILE = "LookALikeChat/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pro.compexnumbers.LookALikeChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";

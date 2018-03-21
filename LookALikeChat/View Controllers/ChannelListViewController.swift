@@ -6,6 +6,7 @@
 //  Copyright © 2018 Complex Numbers. All rights reserved.
 //
 
+
 import UIKit
 import Firebase
 
@@ -13,70 +14,62 @@ class ChannelListViewController: UIViewController {
 
     @IBOutlet var tableView: UITableView!
     
+    /// Reference to firebase "channels" database child
     let channelistReference = Database.database().reference().child("channels")
 
+    /// List of channels
     var model: [ChannelModel] = []
+
+//    let storage = Storage.storage()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tableView.dataSource = self
-
-//        let channel = channlistReference.childByAutoId()
-//        let channelData = ["name": "test2", "owner": "sasha"]
-//        channel.setValue(channelData)
-
+        // add changed rows
         channelistReference.observe(DataEventType.childAdded) { snapshot in
-            guard
-                let data = snapshot.value as? [String : AnyObject],
-                let name = data["name"] as? String,
-                let owner = data["owner"] as? String
-                else { return }
-            let id = snapshot.key
-            let channelModel = ChannelModel(id: id, name: name, owner: owner)
+            guard let channel = ChannelModel(snapshot: snapshot) else { return }
 
-            //self.tableView.reloadData()
-
+            // update tableview
             self.tableView.beginUpdates()
-            self.model.append(channelModel)
+            self.model.append(channel)
             self.tableView.insertRows(at: [IndexPath(row: self.model.count - 1, section: 0)], with: .fade)
             self.tableView.endUpdates()
             print(snapshot)
         }
 
+        // reload changed rows
         channelistReference.observe(DataEventType.childChanged) { snapshot in
             print(snapshot)
             guard
-                let data = snapshot.value as? [String : AnyObject],
-                let name = data["name"] as? String,
-                let owner = data["owner"] as? String
+                let channel = ChannelModel(snapshot: snapshot),
+                let index = (self.model.index { return $0 == channel })
                 else { return }
 
-            let id = snapshot.key
-            guard let index = (self.model.index { return $0.id == id }) else { return }
-            //self.tableView.reloadData()
-
+            // update tableview
             self.tableView.beginUpdates()
-
-            var item = self.model[index]
-            item.name = name
-            item.owner = owner
-            self.model[index] = item
-
+            self.model[index] = channel
             self.tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .fade)
             self.tableView.endUpdates()
         }
 
+        // delete rows
         channelistReference.observe(DataEventType.childRemoved) { snapshot in
             print(snapshot)
             let id = snapshot.key
             guard let index = (self.model.index { return $0.id == id }) else { return }
 
+            // update tableview
             self.tableView.beginUpdates()
             self.model.remove(at: index)
             self.tableView.deleteRows(at: [IndexPath(row: index, section: 0)], with: .fade)
             self.tableView.endUpdates()
         }
+
+        //        let imageRef = storage.reference(forURL: "gs://look-a-like-chat.appspot.com/images/channels/swift.png")
+        //        imageRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
+        //            print(data?.count)
+        //        }
+
     }
 
 }
@@ -98,6 +91,7 @@ extension ChannelListViewController: UITableViewDataSource {
 
 extension ChannelListViewController: UITableViewDelegate {
 
+    // make table view editable with "delete" button
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
         return .delete
     }
@@ -109,11 +103,3 @@ extension ChannelListViewController: UITableViewDelegate {
 
 }
 
-class ChannelListViewControllerCell: UITableViewCell {
-    @IBOutlet weak var channelNameLabel: UILabel!
-
-}
-
-class ChannelListViewControllerCreateChannelCell: UITableViewCell {
-
-}
