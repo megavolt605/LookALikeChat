@@ -12,6 +12,7 @@
 		7862B3C82062C15F0082F34E /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7862B3C72062C15F0082F34E /* UIViewExtension.swift */; };
 		7896D3142062E28E00881971 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7896D3132062E28E00881971 /* Model.swift */; };
 		7896D3162062E40000881971 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7896D3152062E40000881971 /* UserModel.swift */; };
+		78DE9361206D6B5E0008EE96 /* UserListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DE9360206D6B5E0008EE96 /* UserListModel.swift */; };
 		78F19763204030EC00C694ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F19762204030EC00C694ED /* AppDelegate.swift */; };
 		78F19765204030EC00C694ED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F19764204030EC00C694ED /* ViewController.swift */; };
 		78F19768204030EC00C694ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78F19766204030EC00C694ED /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 		7862B3C72062C15F0082F34E /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		7896D3132062E28E00881971 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		7896D3152062E40000881971 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		78DE9360206D6B5E0008EE96 /* UserListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListModel.swift; sourceTree = "<group>"; };
 		78F1975F204030EC00C694ED /* LookALikeChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LookALikeChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78F19762204030EC00C694ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78F19764204030EC00C694ED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 				7896D3132062E28E00881971 /* Model.swift */,
 				78F19778204042D400C694ED /* ChannelModel.swift */,
 				7896D3152062E40000881971 /* UserModel.swift */,
+				78DE9360206D6B5E0008EE96 /* UserListModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 				7896D3142062E28E00881971 /* Model.swift in Sources */,
 				78F19765204030EC00C694ED /* ViewController.swift in Sources */,
 				7896D3162062E40000881971 /* UserModel.swift in Sources */,
+				78DE9361206D6B5E0008EE96 /* UserListModel.swift in Sources */,
 				7862B3C520629A590082F34E /* ChannelListViewControllerCell.swift in Sources */,
 				7862B3C82062C15F0082F34E /* UIViewExtension.swift in Sources */,
 				78F19779204042D400C694ED /* ChannelModel.swift in Sources */,

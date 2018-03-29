@@ -20,14 +20,16 @@ class ChannelListViewController: UIViewController {
     /// List of channels
     var model: [ChannelModel] = []
 
-//    let storage = Storage.storage()
+    let storage = Storage.storage()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // add changed rows
         channelistReference.observe(DataEventType.childAdded) { snapshot in
-            guard let channel = ChannelModel(snapshot: snapshot) else { return }
+            guard
+                let data = snapshot.value as? [String : Any],
+                let channel = ChannelModel(key: snapshot.key, snapshot: data) else { return }
 
             // update tableview
             self.tableView.beginUpdates()
@@ -41,7 +43,8 @@ class ChannelListViewController: UIViewController {
         channelistReference.observe(DataEventType.childChanged) { snapshot in
             print(snapshot)
             guard
-                let channel = ChannelModel(snapshot: snapshot),
+                let data = snapshot.value as? [String: Any],
+                let channel = ChannelModel(key: snapshot.key, snapshot: data),
                 let index = (self.model.index { return $0 == channel })
                 else { return }
 
@@ -65,10 +68,10 @@ class ChannelListViewController: UIViewController {
             self.tableView.endUpdates()
         }
 
-        //        let imageRef = storage.reference(forURL: "gs://look-a-like-chat.appspot.com/images/channels/swift.png")
-        //        imageRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
-        //            print(data?.count)
-        //        }
+        let imageRef = storage.reference(forURL: "gs://look-a-like-chat.appspot.com/images/channels/swift.png")
+        imageRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
+            print(data?.count)
+        }
 
     }
 

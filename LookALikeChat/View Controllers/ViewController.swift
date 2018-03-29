@@ -23,6 +23,15 @@ class ViewController: UIViewController {
         signinButton.rounded()
         registerButton.rounded()
         anonymousLoginButton.rounded()
+        NotificationCenter.default.addObserver(forName: .AllUsersLoaded, object: nil, queue: nil) { _ in
+            DispatchQueue.main.async {
+                self.signinButton.isEnabled = true
+                self.registerButton.isEnabled = true
+                self.anonymousLoginButton.isEnabled = true
+            }
+            NotificationCenter.default.removeObserver(self) // ???
+        }
+        UserListModel.instantiate()
     }
 
     @IBAction func signinButtonAction(_ sender: Any) {

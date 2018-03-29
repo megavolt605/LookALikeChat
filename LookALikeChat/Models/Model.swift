@@ -14,7 +14,7 @@ protocol Model {
     var id : String { get set }
     var snapshot: [String : Any] { get }
 
-    init?(snapshot: DataSnapshot)
+    init?(key: String, snapshot: [String : Any])
 }
 
 func ==(left: Model, right: Model) -> Bool {

@@ -9,7 +9,7 @@
 import Foundation
 import Firebase
 
-struct UserModel: Model {
+class UserModel: Model, Equatable {
 
     static var shared = UserModel(nick: "Default")
     let userlistReference = Database.database().reference().child("users")
@@ -36,24 +36,33 @@ struct UserModel: Model {
         self.nick = nick
     }
 
-    init?(snapshot: DataSnapshot) {
+    required init?(key: String, snapshot: [String : Any]) {
         guard
-            let data = snapshot.value as? [String : Any],
-            let nick = data["nick"] as? String
+            let nick = snapshot["nick"] as? String
             else { return nil }
-        id = snapshot.key
+        id = key
         self.nick = nick
-        firstName = data["firstName"] as? String
-        lastName = data["lastName"] as? String
-        password = data["password"] as? String
-        avatar = URL(string: data["avatar"] as? String ?? "")
+        loadFrom(key: key, snapshot: snapshot)
+    }
+
+    func loadFrom(key: String, snapshot: [String : Any]) {
+        id = key
+        firstName = snapshot["firstName"] as? String
+        lastName = snapshot["lastName"] as? String
+        password = snapshot["password"] as? String
+        avatar = URL(string: snapshot["avatar"] as? String ?? "")
     }
 
     func updateFirebase() {
-        let query = userlistReference.queryEqual(toValue: nick, childKey: "nick")
-        userlistReference.observe(DataEventType.childAdded) { snapshot in
-            ///
-
+        let query = userlistReference.queryOrdered(byChild: "nick").queryEqual(toValue: nick)
+        query.observeSingleEvent(of: DataEventType.value) { snapshot in
+            if let data = snapshot.value as? [String: Any] {
+                self.loadFrom(key: snapshot.key, snapshot: data)
+            } else {
+                let userNode = self.userlistReference.childByAutoId()
+                userNode.setValue(self.snapshot)
+            }
+            //print(self.firstName)
             return
         }
 
@@ -71,4 +80,7 @@ struct UserModel: Model {
         }
     }
 
+    static func ==(lhs: UserModel, rhs: UserModel) -> Bool {
+        return lhs.id == rhs.id
+    }
 }

@@ -13,22 +13,23 @@ struct ChannelModel: Model {
 
     var id : String
     var name: String
-    var owner: String
+    var owner: UserModel
 
-    init(id: String, name: String, owner: String) {
+    init(id: String, name: String, owner: UserModel) {
         self.name = name
         self.owner = owner
         self.id = id
     }
 
-    init?(snapshot: DataSnapshot) {
+    init?(key: String, snapshot: [String : Any]) {
         guard
-            let data = snapshot.value as? [String : Any],
-            let name = data["name"] as? String,
-            let owner = data["owner"] as? String
-            else { return nil }
+            let name = snapshot["name"] as? String,
+            let ownerId = snapshot["ownerId"] as? String,
+            let owner = UserListModel.shared.users.userBy(id: ownerId)
+        else { return nil }
 
-        let id = snapshot.key
+        let id = key
+
         self = ChannelModel(id: id, name: name, owner: owner)
     }
 
