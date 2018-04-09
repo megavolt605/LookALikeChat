@@ -10,6 +10,14 @@ import UIKit
 
 class ChannelListViewControllerCell: UITableViewCell {
     @IBOutlet weak var channelNameLabel: UILabel!
+    
+    @IBOutlet weak var channelOwnerLabel: UILabel!
+
+    func setupCell(with model: ChannelModel) {
+        channelNameLabel.text = model.name
+        channelOwnerLabel.text = model.owner.nick
+    }
+
 }
 
 class ChannelListViewControllerCreateChannelCell: UITableViewCell {

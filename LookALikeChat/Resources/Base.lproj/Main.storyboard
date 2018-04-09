@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="j8I-mW-4Ip">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="j8I-mW-4Ip">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -150,21 +151,39 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lh0-Wj-MKS">
-                                                    <rect key="frame" x="35" y="19" width="345" height="24"/>
+                                                    <rect key="frame" x="78" y="19" width="302" height="24"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J99-YW-JMK">
+                                                    <rect key="frame" x="332.5" y="45.5" width="26.5" height="12"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6DB-qY-2MD">
+                                                    <rect key="frame" x="16" y="4" width="54" height="54"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="6DB-qY-2MD" secondAttribute="height" multiplier="1:1" id="uEd-xI-5sF"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Lh0-Wj-MKS" firstAttribute="leading" secondItem="Bm2-C4-Uya" secondAttribute="leadingMargin" constant="20" id="ANJ-vd-SkD"/>
+                                                <constraint firstAttribute="trailing" secondItem="J99-YW-JMK" secondAttribute="trailing" constant="16" id="2Y7-A7-Pue"/>
+                                                <constraint firstItem="Lh0-Wj-MKS" firstAttribute="leading" secondItem="6DB-qY-2MD" secondAttribute="trailing" constant="8" id="5Ab-7g-Lfc"/>
+                                                <constraint firstItem="6DB-qY-2MD" firstAttribute="leading" secondItem="Bm2-C4-Uya" secondAttribute="leading" constant="16" id="8rI-NP-GaO"/>
+                                                <constraint firstAttribute="bottom" secondItem="6DB-qY-2MD" secondAttribute="bottom" constant="4" id="KPi-fC-teK"/>
+                                                <constraint firstAttribute="bottom" secondItem="J99-YW-JMK" secondAttribute="bottom" constant="4" id="Xxp-DN-q4S"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="Lh0-Wj-MKS" secondAttribute="bottom" constant="8" id="ehM-vn-OFA"/>
                                                 <constraint firstItem="Lh0-Wj-MKS" firstAttribute="top" secondItem="Bm2-C4-Uya" secondAttribute="topMargin" constant="8" id="fvf-IQ-Js3"/>
+                                                <constraint firstItem="6DB-qY-2MD" firstAttribute="top" secondItem="Bm2-C4-Uya" secondAttribute="top" constant="4" id="j87-x0-VhZ"/>
                                                 <constraint firstItem="Lh0-Wj-MKS" firstAttribute="trailing" secondItem="Bm2-C4-Uya" secondAttribute="trailingMargin" constant="20" id="nLY-Au-fIQ"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="channelNameLabel" destination="Lh0-Wj-MKS" id="3HW-c5-ZDF"/>
+                                            <outlet property="channelOwnerLabel" destination="J99-YW-JMK" id="6c5-ll-TdI"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -189,7 +208,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qiX-fo-1av" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1263" y="134"/>
+            <point key="canvasLocation" x="1261.5999999999999" y="133.5832083958021"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="uaF-hX-PAl">

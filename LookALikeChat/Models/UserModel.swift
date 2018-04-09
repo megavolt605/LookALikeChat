@@ -68,7 +68,8 @@ class UserModel: Model, Equatable {
 
     }
 
-    func auth(_ callback: @escaping (_ success: Bool) -> Void) {
+    func auth(name: String, _ callback: @escaping (Bool) -> Void) {
+        nick = name
         Firebase.Auth.auth().signInAnonymously { (user, error) in
             guard error == nil else {
                 print("Error auth user: \(error!.localizedDescription)")

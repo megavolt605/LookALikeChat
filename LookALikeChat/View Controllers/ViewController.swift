@@ -31,31 +31,37 @@ class ViewController: UIViewController {
             }
             NotificationCenter.default.removeObserver(self) // ???
         }
-        UserListModel.instantiate()
+        UserModel.shared.auth(name: "Unknown") { success in
+            if success {
+                UserListModel.instantiate()
+            }
+        }
     }
 
     @IBAction func signinButtonAction(_ sender: Any) {
         guard let login = loginTextField.text else { return }
-        auth(as: login)
+        UserModel.shared.auth(name: login) { success in
+            if success {
+                self.segueToChannelList()
+            }
+        }
     }
 
     @IBAction func registerButtonAction(_ sender: Any) {
     }
 
     @IBAction func anonymousLoginButtonAction(_ sender: Any) {
-        auth(as: "Anonumous")
+        UserModel.shared.auth(name: "Anonumous") { success in
+            if success {
+                self.segueToChannelList()
+            }
+        }
     }
 
-    func auth(as name: String) {
-        UserModel.shared.nick = name
-        UserModel.shared.auth { [weak self] success in
-            guard let s = self else { return }
-            if success {
-                let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-                if let viewController = storyboard.instantiateViewController(withIdentifier: "ChannelListViewController") as? ChannelListViewController {
-                    s.navigationController?.pushViewController(viewController, animated: true)
-                }
-            }
+    func segueToChannelList() {
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        if let viewController = storyboard.instantiateViewController(withIdentifier: "ChannelListViewController") as? ChannelListViewController {
+            navigationController?.pushViewController(viewController, animated: true)
         }
     }
 

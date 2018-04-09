@@ -58,7 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LookALikeChat/Models/UserModel.swift"
-            timestampString = "544044807.416307"
+            timestampString = "544561620.323772"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "66"
@@ -74,7 +74,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LookALikeChat/Models/UserModel.swift"
-            timestampString = "544044807.416422"
+            timestampString = "544561620.324024"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "69"
@@ -90,7 +90,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LookALikeChat/Models/UserModel.swift"
-            timestampString = "544044807.41651"
+            timestampString = "544561620.324146"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "57"
@@ -106,7 +106,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LookALikeChat/Models/UserModel.swift"
-            timestampString = "544044807.416586"
+            timestampString = "544561620.324265"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "59"
@@ -122,7 +122,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LookALikeChat/Models/UserModel.swift"
-            timestampString = "544044807.416661"
+            timestampString = "544561620.324373"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "50"
@@ -138,13 +138,61 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LookALikeChat/Models/UserListModel.swift"
-            timestampString = "544044807.416736"
+            timestampString = "544559953.550364"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "28"
             endingLineNumber = "28"
             landmarkName = "init()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LookALikeChat/Models/UserListModel.swift"
+            timestampString = "544559953.55065"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "init()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "LookALikeChat.UserListModel.init() -&gt; LookALikeChat.UserListModel"
+                  moduleName = "LookALikeChat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/igor/src/LookALikeChat/LookALikeChat/Models/UserListModel.swift"
+                  timestampString = "544560224.343554"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "526">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__ObjC.DataSnapshot) -&gt; () in LookALikeChat.UserListModel.init() -&gt; LookALikeChat.UserListModel"
+                  moduleName = "LookALikeChat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/igor/src/LookALikeChat/LookALikeChat/Models/UserListModel.swift"
+                  timestampString = "544560224.345812"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "27">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

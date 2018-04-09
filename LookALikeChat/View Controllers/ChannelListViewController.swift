@@ -82,11 +82,11 @@ extension ChannelListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.model.count
     }
-
+"/images/channels/swift.png"
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ChannelListViewControllerCell
         let item = model[indexPath.row]
-        cell.channelNameLabel.text = item.name
+        cell.setupCell(with: item)
         return cell
     }
 
